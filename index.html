@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Criptomonedas </title>
+     
+     <link href="https://bootswatch.com/4/sandstone/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="text-center my-5">Cr<span class="span">i</span>pto<span class="span">M</span>one<span class="span">d</span>as</h1>
+    <div class="container main">
+
+        <div class="row justify-content-center">
+            <form class="col-10 col-md-8" id="formulario">
+                <div class="form row">
+                        <div class="form-group col-12 col-md-4">
+                            <select id="moneda" class="form-control">
+                                <option value="" disabled selected>Moneda </option>
+                                <option value="EUR">Euro</option>
+                                <option value="USD">Dolar</option>
+                                <option value="MXN">Peso Mexicano</option>
+                                <option value="GBP">Libras</option>
+                            </select>
+                        </div>    
+                        <div class="form-group col-12 col-md-4">
+                            <select id="crypto" class="form-control">
+                                <option value="" disabled selected>Criptomoneda</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12 col-md-4">
+                            <input type="submit" class="btn btn-success" value="Cotizar">
+                        </div>
+                </div>
+
+                <div class="panel-results row justify-content-center mt-5">
+                    <div class="containter-spinner">
+                  
+                    </div>
+                    <div class="mensajes col-12"></div>
+                    <div id="result" class="col-12"></div>
+                </div>
+            </form>
+        </div> 
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

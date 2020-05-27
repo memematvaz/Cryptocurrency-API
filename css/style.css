@@ -1,0 +1,39 @@
+body {
+
+    background: linear-gradient(to right, #75D1A0 , rgb(170, 211, 37) ); 
+}
+h1 {
+    font-size: 37px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1 .span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+form {
+    margin: 50px auto;
+}
+.main {
+    margin: 50px auto;
+    background-color: white;
+    -webkit-box-shadow: -1px 20px 52px -13px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 20px 52px -13px rgba(0,0,0,0.75);
+    box-shadow: -1px 20px 52px -13px rgba(0,0,0,0.75);
+}
+.mensajes {
+    color: white;
+}
+#result {
+    text-align: center;
+}
+.btn {
+    width: 100%;
+}
+.container-spinner {
+    display: none;
+} 
