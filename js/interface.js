@@ -1,5 +1,19 @@
-class Message {
+class Interface {
 
+    constructor() {
+        this.builtSelect();
+
+    }
+
+    builtSelect(){
+        getApi.getCryptoCurrenciesApi()
+            .then(currencies => {
+                for (const [key, value] of Object.entries(currencies.currencies.Data)) {
+                    console.log(key)
+                 
+                }
+            })
+    }
     response(message, classes) {
         const div = document.createElement('div');
         div.className = classes;

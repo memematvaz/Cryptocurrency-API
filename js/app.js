@@ -1,4 +1,7 @@
-const responseMessage = new Message();
+const getApi = new Api('cad64e3d2ef769d9a6cb21e4c76ee514570a29051ded2dbf30abbe5aa96ba542');
+const responseMessage = new Interface();
+
+
 
 
 
