@@ -1,3 +1,7 @@
+const responseMessage = new Message();
+
+
+
 const form = document.querySelector('#form')
 
 
@@ -13,7 +17,8 @@ validateForm = (e) => {
     const cryptoCurrencySelected = cryptoCurrencySelect.options[cryptoCurrencySelect.selectedIndex].value;
 
     if(currencySelected === '' || cryptoCurrencySelected === '') {
-        
+        responseMessage.response('Ambos campos son obligatorios', 'alert bg-danger text-center');
+
     } else {
         console.elog('allright')
     }
