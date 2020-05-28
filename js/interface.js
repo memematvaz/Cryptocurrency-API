@@ -33,6 +33,13 @@ class Interface {
     }
 
     resultEquivalenceMoney(result, currency, crypto){
+        
+        const previousResult = document.querySelector('#result > div');
+        if(previousResult){ 
+            previousResult.remove();
+
+        }
+        
         let dataMoney = result[crypto][currency];
         let price = dataMoney.PRICE.toFixed(2);
         let variation = dataMoney.CHANGEPCTDAY.toFixed(2);
@@ -66,11 +73,27 @@ class Interface {
         divCardBody.appendChild(variationInfo);
         divCardBody.appendChild(lastUpdate);        
 
-        const divResultContainer = document.querySelector('#result');
-        divResultContainer.appendChild(divResult);
+       
+
+        this.spinnerVisibility()
 
         setTimeout(() => {
-            divResult.remove()}, 3500)
+            const divResultContainer = document.querySelector('#result');
+            divResultContainer.appendChild(divResult)
+            const spinner = document.querySelector('.container-spinner');
+            spinner.style.display = 'none';
+        
+        }, 2500);
+    
+
+   //     setTimeout(() => {
+  //          divResult.remove()}, 5500)
+      }
+
+    spinnerVisibility(){
+        const spinner = document.querySelector('.container-spinner');
+        spinner.style.display = 'block';
+
     }
 
     }
