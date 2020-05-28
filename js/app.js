@@ -12,6 +12,7 @@ const form = document.querySelector('#form')
 
 validateForm = (e) => {
     e.preventDefault()
+
    
     const currencySelect = document.querySelector('#currency');
     const currencySelected = currencySelect.options[currencySelect.selectedIndex].value;
@@ -23,7 +24,11 @@ validateForm = (e) => {
         responseMessage.response('Ambos campos son obligatorios', 'alert bg-danger text-center');
 
     } else {
-        console.elog('allright')
+        getApi.getValues(currencySelected, cryptoCurrencySelected)
+            .then(data => {
+               // document.querySelector('#result').removeChild(div)
+                responseMessage.resultEquivalenceMoney(data.result.RAW, currencySelected, cryptoCurrencySelected);
+            })
     }
 
 
