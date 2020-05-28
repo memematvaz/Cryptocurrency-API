@@ -8,7 +8,7 @@ class Interface {
     builtSelect(){
         getApi.getCryptoCurrenciesApi()
             .then(currencies => {
-                
+               
                 const select = document.querySelector('#crypto');
 
                 for (const [key, value] of Object.entries(currencies.currencies.Data)) {
@@ -18,7 +18,10 @@ class Interface {
                     select.appendChild(option);
                  
                 }
+                
             })
+       
+
     }
     response(message, classes) {
         const div = document.createElement('div');
@@ -29,7 +32,7 @@ class Interface {
         divMessage.appendChild(div);
 
         setTimeout(() => {
-            document.querySelector('.messages div').remove()}, 2500)
+            document.querySelector('.messages div').remove()}, 3000)
     }
 
     resultEquivalenceMoney(result, currency, crypto){

@@ -26,9 +26,14 @@ validateForm = (e) => {
     } else {
         getApi.getValues(currencySelected, cryptoCurrencySelected)
             .then(data => {
+
+                if(data) {
                // document.querySelector('#result').removeChild(div)
                 responseMessage.resultEquivalenceMoney(data.result.RAW, currencySelected, cryptoCurrencySelected);
+                }  
+            
             })
+            .catch(error => {responseMessage.response('Prueba con otra criptomoneda', 'alert bg-danger text-center'); });
     }
 
 
