@@ -33,7 +33,13 @@ class Interface {
     }
 
     resultEquivalenceMoney(result, currency, crypto){
-        const dataMoney = result[crypto][currency];
+        let dataMoney = result[crypto][currency];
+        let price = dataMoney.PRICE.toFixed(2);
+        let variation = dataMoney.CHANGEPCTDAY.toFixed(2);
+
+        //Change date from unix time stamp to Spanish date
+        let updated = new Date(dataMoney.LASTUPDATE * 1000).toLocaleDateString('es-ES')
+
 
         const divResult = document.createElement('div');
         divResult.classList.add('card', 'bg-success')
@@ -46,17 +52,25 @@ class Interface {
         title.appendChild(document.createTextNode('Resultado:'))
 
         const priceInfo = document.createElement('p');
-        priceInfo.appendChild(document.createTextNode(`El precio de ${dataMoney.FROMSYMBOL} a moneda ${dataMoney.TOSYMBOL} es de ${dataMoney.PRICE}`))   
+        priceInfo.appendChild(document.createTextNode(`El precio de ${dataMoney.FROMSYMBOL} es de ${price} ${dataMoney.TOSYMBOL}`))   
+
+        const variationInfo = document.createElement('p');
+        variationInfo.appendChild(document.createTextNode(`Variación último día ${variation}`))   
+
+        const lastUpdate = document.createElement('p');
+        lastUpdate.appendChild(document.createTextNode(`Última actualización ${updated}`))  
 
         divResult.appendChild(divCardBody);
         divCardBody.appendChild(title);
         divCardBody.appendChild(priceInfo);
+        divCardBody.appendChild(variationInfo);
+        divCardBody.appendChild(lastUpdate);        
 
         const divResultContainer = document.querySelector('#result');
         divResultContainer.appendChild(divResult);
 
         setTimeout(() => {
-            divResultContainer.remove()}, 3000)
+            divResult.remove()}, 3500)
     }
 
     }
